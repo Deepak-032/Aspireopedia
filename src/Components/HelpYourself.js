@@ -1,7 +1,6 @@
 import React from 'react'
 
 function HelpYourself() {
-
     const data = [
         {
             i: "/image/authenticator.jpg",
@@ -34,9 +33,9 @@ function HelpYourself() {
             l: "https://play.google.com/store/search?q=MS-+cafe&c=apps"
         },
         {
-            i: "/image/GlobeSmart.png",
-            h: "GlobeSmart",
-            p: "Checkout analytics-driven solutions that help bridge workation, and cultural differences.",
+            i: "/image/cp.jpeg",
+            h: "Intune Company Portal",
+            p: "Get access to Microsoft apps and resources from almost any network. Check this guide to setup your company portal.",
             l: "#"
         }
     ]

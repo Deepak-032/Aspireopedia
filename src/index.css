@@ -172,7 +172,7 @@ footer {
   color: rgb(0, 0, 0, 0.22);
 }
 
-.week.active{
+.week.active {
   background-color: green;
 }
 
@@ -193,4 +193,29 @@ footer {
 .bi-search {
   position: relative;
   margin-right: -1rem;
+}
+
+.clubs_img {
+  height: 200px;
+}
+
+.blink {
+  -webkit-animation: 2s linear infinite condemned_blink_effect;
+  /* for Safari 4.0 - 8.0 */
+  animation: 1s linear infinite condemned_blink_effect;
+}
+
+
+@keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
 }

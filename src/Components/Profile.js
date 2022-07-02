@@ -13,6 +13,9 @@ import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied
 import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied'
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined'
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied'
+import { signOut } from 'firebase/auth'
+import { auth } from '../firebase'
+import { useNavigate } from 'react-router-dom'
 
 const StyledRating = styled(Rating)(({ theme }) => ({
     '& .MuiRating-iconEmpty .MuiSvgIcon-root': {
@@ -49,6 +52,7 @@ function IconContainer(props) {
 }
 
 function Profile() {
+    const navigate = useNavigate()
     const steps = [
         {
             label: 'Alias Delivered',
@@ -97,19 +101,27 @@ function Profile() {
         )
     }
 
+    const signout = () => {
+        signOut(auth)
+            .then(() => navigate('/'))
+    }
+
     return (
         <div className='container mt-5 position-relative'>
             <h2 className='fw-bold'>Your Profile</h2>
-            <h6 className='text-success mb-5'>Status: {mood}</h6>
-            <div className='d-flex justify-content-between align-items-center mb-5'>
-                <div>
-                    <h6>Name: Oliver Hansen</h6>
-                    <h6>E-mail: oliver.hansen@email.com</h6>
-                    <h6>Phone: 98768890998</h6>
-                    <button className="btn btn-success mt-4" id="generate">Generate Access Pass</button>
-
+            <h6 className='text-success mb-4'>Status: {mood}</h6>
+            <div className='mb-5'>
+                <div className='d-flex align-items-center'>
+                    <i className='bi bi-person-circle' style={{ fontSize: "84px" }} />
+                    <div>
+                        <h5 className='ms-3 m-0' style={{ textTransform: "capitalize" }}>Name: {auth.currentUser.email.split('@').shift()}</h5>
+                        <h5 className='ms-3 m-0'>E-mail: {auth.currentUser.email}</h5>
+                        <h5 className='ms-3 m-0'>Phone: +91-8988765542</h5>
+                        {/* <i className="ms-3 font22 text-success bi bi-pencil-square"></i> */}
+                    </div>
                 </div>
-                <img style={{ width: "150px" }} src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0" className="qr-code img-thumbnail" />
+                <img style={{ width: "174px" }} src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0" className="qr-code img-thumbnail" /><br />
+                <button className="btn btn-success mt-4" id="generate">Generate Access Pass</button>
             </div>
             <Dropdown heading={"What's Your Step"} headingClassName="border-bottom pb-2">
                 <Stepper className='mb-3' activeStep={activeStep} orientation="vertical">
@@ -184,7 +196,7 @@ function Profile() {
                     onChange={(e) => setMood(customIcons[e.target.value].label)}
                 />
             </Dropdown>
-            <button className='btn border-success text-success mt-4 ms-auto d-block'>Sign Out</button>
+            <button onClick={signout} className='btn border-success text-success mt-4 ms-auto d-block'>Sign Out</button>
         </div>
     )
 }

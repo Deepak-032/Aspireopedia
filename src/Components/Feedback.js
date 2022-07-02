@@ -26,7 +26,7 @@ function Feedback() {
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                     </tr>
                     <tr>
-                        <td className='text-start'>How satisfied were you with the timeliness of alias delivery</td>
+                        <td className='text-start'>How satisfied were you with the Tech talks</td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
@@ -34,7 +34,7 @@ function Feedback() {
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                     </tr>
                     <tr>
-                        <td className='text-start'>How satisfied were you with the timeliness of alias delivery</td>
+                        <td className='text-start'>How satisfied were you with the CBCF</td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
@@ -42,7 +42,7 @@ function Feedback() {
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                     </tr>
                     <tr>
-                        <td className='text-start'>How satisfied were you with the timeliness of alias delivery</td>
+                        <td className='text-start'>How satisfied were you with your buddies interaction</td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
@@ -50,7 +50,7 @@ function Feedback() {
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                     </tr>
                     <tr>
-                        <td className='text-start'>How satisfied were you with the timeliness of alias delivery</td>
+                        <td className='text-start'>How satisfied were you with this platform Aspireopedia</td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
                         <td><input className="form-check-input" type="radio" name="exampleRadios" /></td>
@@ -59,10 +59,6 @@ function Feedback() {
                     </tr>
                 </tbody>
             </table>
-            <h6 className="mt-4 fw-bold">What change you want us to bring?</h6>
-            <textarea className="form-control mt-3" rows="4"></textarea>
-            <h6 className="mt-4 fw-bold">What should we change?</h6>
-            <textarea className="form-control mt-3" rows="4"></textarea>
             <h6 className="mt-4 fw-bold">What should we change in order to live up to your expectations?</h6>
             <textarea className="form-control mt-3" rows="4"></textarea>
             <button className="btn btn-success w-100 mt-4">Send Feedback</button>
